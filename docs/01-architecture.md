@@ -338,13 +338,13 @@ Crawl Engine Pipeline:
 
 ```yaml
 Purpose: AI-powered content optimization, generation, and recommendations
-Stack: FastAPI + OpenAI API / Anthropic Claude + PostgreSQL + Redis + S3
+Stack: FastAPI + Codex LLM + PostgreSQL + Redis + S3
 Port: 8005
 Instances: 5 (API), 5 workers (AI generation)
 
 Capabilities:
   - Content brief generation (target keywords, questions, outline, word count)
-  - AI-powered content writing (GPT-4o / Claude with SEO guidelines)
+  - AI-powered content writing (Codex with SEO guidelines)
   - Content optimization scoring (readability, keyword density, NLP entity coverage)
   - Meta title & description generation (A/B variants)
   - Content gap analysis (vs. top-ranking competitors)
@@ -755,7 +755,7 @@ Communication Patterns:
 │ Auth Provider                  │ Keycloak            │ 24.x    │ IAM       │
 │ Email                          │ SendGrid / AWS SES  │ N/A     │ Email     │
 │ Payments                       │ Stripe              │ N/A     │ Billing   │
-│ LLM Providers                  │ OpenAI / Anthropic  │ N/A     │ AI gen    │
+│ LLM Providers                  │ Codex               │ N/A     │ AI gen    │
 │ SERP Data                      │ Internal scrapers   │ N/A     │ SERP      │
 │ Proxy Network                  │ Bright Data / Oxylabs│ N/A    │ Proxies   │
 └────────────────────────────────┴─────────────────────┴─────────┴───────────┘
@@ -799,9 +799,8 @@ python-jose[cryptography]==3.*
 passlib[bcrypt]==1.7.*
 python-multipart==0.0.*
 
-# AI/ML
+# AI/LLM
 openai==1.*
-anthropic==0.25.*
 sentence-transformers==2.*
 scikit-learn==1.*
 torch==2.*
@@ -1588,7 +1587,6 @@ secret/proactive-seo/production/redis       → Redis password
 secret/proactive-seo/production/rabbitmq    → RabbitMQ credentials
 secret/proactive-seo/production/jwt         → JWT signing keys
 secret/proactive-seo/production/openai      → OpenAI API key
-secret/proactive-seo/production/anthropic   → Anthropic API key
 secret/proactive-seo/production/stripe      → Stripe keys
 secret/proactive-seo/production/sendgrid    → SendGrid API key
 secret/proactive-seo/production/s3          → AWS credentials (if not using IRSA)

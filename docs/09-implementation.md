@@ -48,7 +48,7 @@ comparison, decision scoring, and execution gates can all be tested without a pr
 
 OpenAI calls use the Responses API with Pydantic parsing. The role router preserves cost and latency:
 Luna handles extraction, Terra routine generation, Sol high-impact reasoning, and GPT-5.3-Codex code
-repair. GPT-4o is retained only as a disabled legacy configuration entry.
+repair.
 
 ## Deployment
 

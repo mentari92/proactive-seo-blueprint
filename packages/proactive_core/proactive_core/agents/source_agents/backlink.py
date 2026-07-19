@@ -23,6 +23,7 @@ from datetime import datetime, timedelta
 from enum import Enum
 from typing import Optional
 
+LLM_MODEL = "codex"
 logger = logging.getLogger(__name__)
 
 
@@ -393,7 +394,7 @@ class HAROResponseGenerator:
         research: Optional[dict] = None,
     ) -> str:
         """
-        Generate a HARO response using GPT-4o.
+        Generate a HARO response using Codex.
 
         Args:
             query: HARO query
@@ -440,7 +441,7 @@ Write the response:"""
                         "Content-Type": "application/json",
                     },
                     json={
-                        "model": "gpt-4o",
+                        "model": LLM_MODEL,
                         "messages": [
                             {"role": "system", "content": "You are an expert PR writer crafting HARO responses."},
                             {"role": "user", "content": prompt},

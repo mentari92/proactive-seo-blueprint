@@ -1249,8 +1249,8 @@ Each page maps to exactly one surface archetype. The surface determines composit
 │           │                                                              │
 │           │  AI Model                                                    │
 │           │  ─────────────────────────────────────────────────────────── │
-│           │  Primary model       [claude-3.5-sonnet ▾]                  │
-│           │  Fallback model      [gpt-4o ▾]                             │
+│           │  Primary model       [codex ▾]                               │
+│           │  Fallback model      [codex ▾]                               │
 │           │  Temperature         [0.3 ──●──────────]                    │
 │           │                                                              │
 │           │  Notifications                                               │

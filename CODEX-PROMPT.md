@@ -45,7 +45,7 @@ Infrastructure:
 - Cloudflare (CDN + WAF)
 
 External APIs:
-- OpenAI GPT-4o + Codex (LLM)
+- Codex (LLM)
 - Gmail API (outreach execution)
 - DataForSEO (SERP + backlink + keyword)
 - Google Search Console API
@@ -156,7 +156,7 @@ Phase 7: Polish (Week 8)
 - Follow the database schema in docs/02-database.md exactly
 - Follow the API spec in docs/03-api-specification.md exactly
 - Follow the agent workflows in docs/04-agent-system.md exactly
-- Use claude-design principles for frontend (see docs/07-frontend.md)
+- Use design-system principles for frontend (see docs/07-frontend.md)
 - All outreach emails sent via Gmail API (see docs/06-integrations.md)
 - DataForSEO replaces SerpAPI + Ahrefs (see docs/06-integrations.md)
 

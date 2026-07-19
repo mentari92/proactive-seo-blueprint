@@ -6,7 +6,7 @@ Components:
 - On-page audit with 200+ signals
 - Dual scoring: Google Score + AI Readiness Score
 - Keyword gap analysis via DataForSEO
-- Meta tag optimization via GPT-4o
+- Meta tag optimization via Codex
 - Content generation pipeline
 - Internal link recommendation
 - AEO/GEO optimization
@@ -23,6 +23,7 @@ from enum import Enum
 from typing import Any, Optional
 
 import httpx
+LLM_MODEL = "codex"
 
 logger = logging.getLogger(__name__)
 
@@ -674,7 +675,7 @@ class KeywordEngine:
 
 class MetaTagOptimizer:
     """
-    Meta tag optimization via GPT-4o.
+    Meta tag optimization via Codex.
     Generates optimized title, description, and OG tags.
     """
 
@@ -690,7 +691,7 @@ class MetaTagOptimizer:
         count: int = 5,
     ) -> list[MetaTagResult]:
         """
-        Generate optimized meta tags using GPT-4o.
+        Generate optimized meta tags using Codex.
 
         Returns list of MetaTagResult options to choose from.
         """
@@ -723,7 +724,7 @@ OG_DESCRIPTION: ...
                         "Content-Type": "application/json",
                     },
                     json={
-                        "model": "gpt-4o",
+                        "model": LLM_MODEL,
                         "messages": [
                             {"role": "system", "content": "You are an expert SEO copywriter. Generate optimized meta tags."},
                             {"role": "user", "content": prompt},
@@ -818,7 +819,7 @@ Format as JSON."""
                         "Content-Type": "application/json",
                     },
                     json={
-                        "model": "gpt-4o",
+                        "model": LLM_MODEL,
                         "messages": [
                             {"role": "system", "content": "You are an expert content strategist. Generate structured content outlines."},
                             {"role": "user", "content": prompt},
@@ -870,7 +871,7 @@ Write engaging, informative content. Use short paragraphs, bullet points where a
                         "Content-Type": "application/json",
                     },
                     json={
-                        "model": "gpt-4o",
+                        "model": LLM_MODEL,
                         "messages": [
                             {"role": "system", "content": "You are an expert content writer. Write engaging, SEO-optimized content."},
                             {"role": "user", "content": prompt},
@@ -1038,7 +1039,7 @@ class ForgeAgent:
     Integrates:
     - On-page audit with dual scoring
     - Keyword gap analysis via DataForSEO
-    - Meta tag optimization via GPT-4o
+    - Meta tag optimization via Codex
     - Content generation pipeline
     - Internal link recommendation
     - AEO/GEO optimization

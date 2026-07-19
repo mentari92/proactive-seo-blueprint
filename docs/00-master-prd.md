@@ -357,7 +357,7 @@ Proactive SEO Blueprint is a platform where 8 specialized AI agents autonomously
 | **Analytics DB** | ClickHouse (ranking data, time-series) |
 | **Search** | Meilisearch (full-text), OpenSearch (logs) |
 | **Object Storage** | AWS S3 / MinIO |
-| **AI/LLM** | OpenAI GPT-4o, Claude 3.5 Sonnet (content generation), local embeddings |
+| **AI/LLM** | Codex (content generation), local embeddings |
 | **Crawling** | Custom crawler (Playwright-based) + DataForSEO API |
 | **Monitoring** | Prometheus + Grafana, Sentry (error tracking) |
 | **CI/CD** | GitHub Actions → Docker → Kubernetes (AWS EKS) |

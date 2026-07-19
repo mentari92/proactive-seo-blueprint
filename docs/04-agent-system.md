@@ -1022,7 +1022,7 @@ forge:
     max_word_count: 5000
     default_tone: "professional"
     llm_provider: "openai"
-    llm_model: "gpt-4o"
+    llm_model: "codex"
     max_tokens_per_request: 4096
     daily_token_budget: 50000
     human_review_required: true

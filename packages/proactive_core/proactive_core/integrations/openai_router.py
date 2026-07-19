@@ -34,7 +34,7 @@ ROUTES = {
     ModelRole.HIGH_IMPACT: ModelRoute(model="gpt-5.6-sol", reasoning_effort="high"),
     ModelRole.CODE_REPAIR: ModelRoute(model="gpt-5.3-codex", reasoning_effort="high"),
 }
-LEGACY_MODELS = {"gpt-4o": {"enabled": False, "reason": "legacy alias disabled by policy"}}
+LEGACY_MODELS = {}
 
 
 class OpenAIRouter:
