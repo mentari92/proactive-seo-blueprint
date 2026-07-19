@@ -1562,7 +1562,6 @@ data:
 
   # External APIs
   OPENAI_API_KEY: ""  # From Vault
-  ANTHROPIC_API_KEY: ""  # From Vault
   SENDGRID_API_KEY: ""  # From Vault
   STRIPE_SECRET_KEY: ""  # From Vault
 

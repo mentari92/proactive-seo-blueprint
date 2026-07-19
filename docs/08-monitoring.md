@@ -1078,7 +1078,7 @@ async def execute_agent(agent_type: str, task: dict):
             with tracer.start_as_current_span(
                 "agent.llm_call",
                 attributes={
-                    "llm.model": "gpt-4o",
+                    "llm.model": "codex",
                     "llm.tokens.prompt": len(prompt),
                 }
             ):
@@ -1137,7 +1137,7 @@ async def execute_agent(agent_type: str, task: dict):
 { span.agent.type = "content-writer" && duration > 10s }
 
 # Errors in LLM calls
-{ span.llm.model = "gpt-4o" && status = error }
+{ span.llm.model = "codex" && status = error }
 
 # Traces that hit both Redis and OpenAI
 { span.db.system = "redis" } >> { span.http.url = "https://api.openai.com/*" }

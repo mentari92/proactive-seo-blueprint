@@ -816,7 +816,7 @@ GitHub Actions
 
 | Component | Starter | Pro | Agency |
 |---|---|---|---|
-| LLM API (OpenAI/Claude) | $3 | $8 | $25 |
+| LLM API (Codex) | $3 | $8 | $25 |
 | SERP Data (DataForSEO) | $5 | $12 | $40 |
 | Infrastructure (compute, DB) | $2 | $5 | $15 |
 | Email (SendGrid) | $1 | $2 | $5 |
