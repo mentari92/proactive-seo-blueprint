@@ -272,7 +272,7 @@ class ContentAuditOutput(BaseModel):
 
 
 class ForgeAgent(Agent[ContentAuditInput, ContentAuditOutput]):
-    """Content auditor implementing the blueprint's dual scoring system."""
+    """Content auditor implementing the design's dual scoring system."""
 
     key = "forge"
 
@@ -417,7 +417,7 @@ class CompetitorAgent(Agent[CompetitorInput, CompetitorOutput]):
 
 
 class DecisionInput(BaseModel):
-    """Priority factors from the decision-engine blueprint."""
+    """Priority factors from the decision-engine specification."""
 
     impact: float = Field(ge=0, le=10)
     urgency: float = Field(ge=0, le=10)
@@ -442,7 +442,7 @@ class DecisionEngineAgent(Agent[DecisionInput, DecisionOutput]):
     key = "decision"
 
     async def execute(self, input_data: DecisionInput, context: AgentContext) -> DecisionOutput:
-        """Normalize the blueprint formula to a bounded 0–100 score."""
+        """Normalize the scoring formula to a bounded 0–100 score."""
         raw = (input_data.impact * input_data.urgency * input_data.confidence) / (
             input_data.effort * max(input_data.risk, 0.1)
         )
