@@ -4,7 +4,7 @@ metadata: {name: proactive-seo, namespace: argocd}
 spec:
   project: default
   source:
-    repoURL: https://github.com/mentari92/proactive-seo-blueprint.git
+    repoURL: https://github.com/mentari92/proactive-seo.git
     targetRevision: main
     path: infrastructure/kubernetes/chart
     helm: {valueFiles: [values.yaml]}
