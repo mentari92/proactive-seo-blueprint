@@ -332,56 +332,156 @@ function SettingsPage() {
 
 function SEOCommandCenter() {
   return (
-    <section className="stats-grid">
-      <StatCard label="Keywords tracked" value="1,204" delta="5.2%" />
-      <StatCard label="Avg. position" value="4.8" delta="0.3" />
-      <StatCard label="SERP features" value="38" delta="7" />
-      <StatCard label="Competitors" value="6" delta="1" positive={false} />
-    </section>
+    <>
+      <section className="stats-grid">
+        <StatCard label="Keywords tracked" value="1,204" delta="5.2%" />
+        <StatCard label="Avg. position" value="4.8" delta="0.3" />
+        <StatCard label="SERP features" value="38" delta="7" />
+        <StatCard label="Competitors" value="6" delta="1" positive={false} />
+      </section>
+      <div className="section-spacer" />
+      <DataTable route="/seo/keywords" />
+    </>
   );
 }
 
 function ContentHub() {
   return (
-    <section className="stats-grid">
-      <StatCard label="Content briefs" value="12" delta="3" />
-      <StatCard label="AI Readiness" value="79 / 100" delta="5.1%" />
-      <StatCard label="Google score" value="86 / 100" delta="2.3%" />
-      <StatCard label="Decaying articles" value="4" delta="2" positive={false} />
-    </section>
+    <>
+      <section className="stats-grid">
+        <StatCard label="Content briefs" value="12" delta="3" />
+        <StatCard label="AI Readiness" value="79 / 100" delta="5.1%" />
+        <StatCard label="Google score" value="86 / 100" delta="2.3%" />
+        <StatCard label="Decaying articles" value="4" delta="2" positive={false} />
+      </section>
+      <div className="section-spacer" />
+      <section className="lower-grid">
+        <Card>
+          <div className="card-heading"><div><p className="overline">Dual scoring</p><h3>Content performance</h3></div></div>
+          <div className="health-breakdown">
+            <span><i className="success" /> <b>Google Score:</b> 86/100 — Good keyword targeting</span>
+            <span><i className="warning" /> <b>AI Readiness:</b> 79/100 — Needs entity clarity</span>
+            <span><i className="success" /> <b>Readability:</b> Grade 8 — Accessible</span>
+            <span><i className="danger" /> <b>Information Gain:</b> 42/100 — Add original data</span>
+          </div>
+        </Card>
+        <Card>
+          <div className="card-heading"><div><p className="overline">Recommended</p><h3>Content briefs</h3></div></div>
+          <div className="action-list">
+            <div><span className="priority priority-0">P0</span><span><b>AI Search visibility guide</b><small>Forge · 15 min</small></span><Button variant="secondary">Brief</Button></div>
+            <div><span className="priority priority-1">P1</span><span><b>Enterprise link building 2025</b><small>Forge · 20 min</small></span><Button variant="secondary">Brief</Button></div>
+            <div><span className="priority priority-2">P2</span><span><b>Core Web Vitals migration</b><small>Forge · 25 min</small></span><Button variant="secondary">Brief</Button></div>
+          </div>
+        </Card>
+      </section>
+    </>
   );
 }
 
 function TechnicalAudit() {
   return (
-    <section className="stats-grid">
-      <StatCard label="Crawl errors" value="3" delta="1" positive={false} />
-      <StatCard label="Core Web Vitals" value="Pass" delta="2 sites" />
-      <StatCard label="Schema coverage" value="68%" delta="12%" />
-      <StatCard label="Broken links" value="7" delta="3" positive={false} />
-    </section>
+    <>
+      <section className="stats-grid">
+        <StatCard label="Crawl errors" value="3" delta="1" positive={false} />
+        <StatCard label="Core Web Vitals" value="Pass" delta="2 sites" />
+        <StatCard label="Schema coverage" value="68%" delta="12%" />
+        <StatCard label="Broken links" value="7" delta="3" positive={false} />
+      </section>
+      <div className="section-spacer" />
+      <section className="lower-grid">
+        <Card>
+          <div className="card-heading"><div><p className="overline">Issues</p><h3>Critical findings</h3></div><Link href="/technical/issues">View all</Link></div>
+          <div className="action-list">
+            <div><span className="priority priority-0">P0</span><span><b>Canonical tag conflict on /blog/seo</b><small>Technical · Auto-fix available</small></span><Button variant="secondary">Fix</Button></div>
+            <div><span className="priority priority-0">P0</span><span><b>Missing alt text on 12 product images</b><small>Technical · Auto-fix available</small></span><Button variant="secondary">Fix</Button></div>
+            <div><span className="priority priority-1">P1</span><span><b>Hreflang tag missing on /fr/ pages</b><small>Technical · Manual review</small></span><Button variant="secondary">Review</Button></div>
+            <div><span className="priority priority-1">P1</span><span><b>Schema markup invalid on 3 pages</b><small>Technical · Regenerate</small></span><Button variant="secondary">Regen</Button></div>
+          </div>
+        </Card>
+        <Card>
+          <div className="card-heading"><div><p className="overline">Self-healing</p><h3>Auto-resolved</h3></div><Badge tone="success">8 fixed today</Badge></div>
+          <div className="activity-list">
+            <p><Check size={14} /> Missing meta descriptions regenerated <time>5m</time></p>
+            <p><Check size={14} /> Broken internal links redirected <time>17m</time></p>
+            <p><Check size={14} /> Duplicate title tags merged <time>42m</time></p>
+            <p><Check size={14} /> Sitemap resubmitted to GSC <time>1h</time></p>
+          </div>
+        </Card>
+      </section>
+    </>
   );
 }
 
 function AnalyticsPage() {
   return (
-    <section className="stats-grid">
-      <StatCard label="Organic traffic" value="24.8K" delta="8.3%" />
-      <StatCard label="AI Search visibility" value="74.3%" delta="6.8%" />
-      <StatCard label="Click-through rate" value="4.2%" delta="0.3%" />
-      <StatCard label="Bounce rate" value="38%" delta="2%" positive={false} />
-    </section>
+    <>
+      <section className="stats-grid">
+        <StatCard label="Organic traffic" value="24.8K" delta="8.3%" />
+        <StatCard label="AI Search visibility" value="74.3%" delta="6.8%" />
+        <StatCard label="Click-through rate" value="4.2%" delta="0.3%" />
+        <StatCard label="Bounce rate" value="38%" delta="2%" positive={false} />
+      </section>
+      <div className="section-spacer" />
+      <section className="overview-grid">
+        <Card className="trend-card">
+          <div className="card-heading"><div><p className="overline">Traffic sources</p><h3>Channel breakdown</h3></div><Badge>Last 30 days</Badge></div>
+          <div className="chart-wrap" role="img" aria-label="Traffic by channel">
+            <ResponsiveContainer width="100%" height="100%">
+              <AreaChart data={[{day:"W1",organic:18.2,ai:4.1,direct:6.3},{day:"W2",organic:19.8,ai:5.2,direct:6.8},{day:"W3",organic:21.4,ai:6.7,direct:7.2},{day:"W4",organic:24.8,ai:8.9,direct:7.8}]} margin={{top:12,right:8,bottom:0,left:-20}}>
+                <defs>
+                  <linearGradient id="organic" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#6366f1" stopOpacity={0.28} /><stop offset="100%" stopColor="#6366f1" stopOpacity={0} /></linearGradient>
+                  <linearGradient id="ai" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#10b981" stopOpacity={0.28} /><stop offset="100%" stopColor="#10b981" stopOpacity={0} /></linearGradient>
+                </defs>
+                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="var(--border-default)" />
+                <XAxis dataKey="day" axisLine={false} tickLine={false} tick={{fill:"var(--ink-tertiary)",fontSize:11}} />
+                <YAxis axisLine={false} tickLine={false} tick={{fill:"var(--ink-tertiary)",fontSize:11}} />
+                <Tooltip contentStyle={{background:"var(--bg-surface-raised)",border:"1px solid var(--border-default)",borderRadius:6,fontSize:12}} />
+                <Area type="monotone" dataKey="organic" stroke="#6366f1" strokeWidth={2} fill="url(#organic)" isAnimationActive={false} name="Organic" />
+                <Area type="monotone" dataKey="ai" stroke="#10b981" strokeWidth={2} fill="url(#ai)" isAnimationActive={false} name="AI Search" />
+              </AreaChart>
+            </ResponsiveContainer>
+          </div>
+        </Card>
+        <Card>
+          <div className="card-heading"><div><p className="overline">Integrations</p><h3>Connection status</h3></div></div>
+          <div className="activity-list">
+            <p><Check size={14} color="var(--ink-success)" /> Google Search Console — Synced <time>2m</time></p>
+            <p><Check size={14} color="var(--ink-success)" /> GA4 — Synced <time>5m</time></p>
+            <p><Check size={14} color="var(--ink-success)" /> DataForSEO — Active <time>1m</time></p>
+            <p><Sparkles size={14} color="var(--ink-warning)" /> Bing Webmaster — Reconnecting <time>15m</time></p>
+          </div>
+        </Card>
+      </section>
+    </>
   );
 }
 
 function ReportsPage() {
   return (
-    <section className="stats-grid">
-      <StatCard label="Scheduled reports" value="6" delta="2" />
-      <StatCard label="Last generated" value="2h ago" delta="-" />
-      <StatCard label="Export formats" value="PDF, CSV" delta="-" />
-      <StatCard label="Automated" value="Weekly" delta="-" />
-    </section>
+    <>
+      <section className="stats-grid">
+        <StatCard label="Scheduled reports" value="6" delta="2" />
+        <StatCard label="Last generated" value="2h ago" delta="-" />
+        <StatCard label="Export formats" value="PDF, CSV" delta="-" />
+        <StatCard label="Automated" value="Weekly" delta="-" />
+      </section>
+      <div className="section-spacer" />
+      <Card className="table-card">
+        <div className="card-heading"><div><p className="overline">Report library</p><h3>Generated reports</h3></div><Button variant="secondary">Generate new</Button></div>
+        <div className="table-scroll">
+          <table>
+            <thead><tr><th>Report</th><th>Period</th><th>Format</th><th>Generated</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>Monthly SEO Performance</td><td>Jun 2025</td><td>PDF</td><td>2h ago</td><td><Badge tone="success">Ready</Badge></td></tr>
+              <tr><td>Weekly Rank Tracking</td><td>Jul 14-19</td><td>CSV</td><td>6h ago</td><td><Badge tone="success">Ready</Badge></td></tr>
+              <tr><td>Content Audit Summary</td><td>Q2 2025</td><td>PDF</td><td>1d ago</td><td><Badge tone="success">Ready</Badge></td></tr>
+              <tr><td>Backlink Acquisition Report</td><td>Jun 2025</td><td>PDF</td><td>2d ago</td><td><Badge tone="warning">Stale</Badge></td></tr>
+              <tr><td>Competitor Gap Analysis</td><td>Jul 2025</td><td>PDF</td><td>3d ago</td><td><Badge tone="danger">Expired</Badge></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </Card>
+    </>
   );
 }
 
